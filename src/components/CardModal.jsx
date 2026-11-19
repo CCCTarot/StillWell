@@ -1,0 +1,7 @@
+import { useEffect } from 'react';
+export default function CardModal({card,position,onClose}) {
+  useEffect(()=>{if(!card)return;const onKey=e=>{if(e.key==='Escape')onClose();};window.addEventListener('keydown',onKey);document.body.style.overflow='hidden';return()=>{window.removeEventListener('keydown',onKey);document.body.style.overflow='';};},[card,onClose]);
+  if(!card)return null;
+  const reversed=card.reversedDraw;
+  return <div className="modal-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}><section className="reading-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button className="modal-close" onClick={onClose} aria-label="Close reading">×</button><div className={`modal-art ${reversed?'reversed':''}`}><div className="card-frame"><span className="card-category">{card.category}</span><span className="card-glyph">{card.glyph}</span><span className="card-title">{card.title}</span></div></div><div className="modal-copy"><span className="eyebrow">{position||'Your card'} · {reversed?'Reversed':'Upright'}</span><h2 id="modal-title">{card.title}</h2><p className="modal-keyword">{card.keywords}</p><p>{card.description}</p><div className="meaning"><span>{reversed?'REVERSED':'UPRIGHT'} MEANING</span><p>{reversed?card.reversed:card.upright}</p></div><p className="reflection">Take what resonates, leave what doesn’t. This reading is a prompt for reflection, not a fixed prediction.</p><button className="button button-primary modal-done" onClick={onClose}>Return to your reading</button></div></section></div>;
+}
