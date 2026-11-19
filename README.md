@@ -4,7 +4,7 @@ A minimalist, responsive cartomancy app for reflective Tarot, Oracle, and Lenorm
 
 ## Features
 
-- 78-card Tarot, 36-card Lenormand, and 24-card Oracle datasets, including categories, keywords, upright and reversed meanings, and interpretive notes.
+- 78-card Tarot, 36-card Lenormand, and the 25-card VISAAAN Love Oracle (“The Hidden Truth of Love”), with card metadata and interpretations.
 - One-card, three-card, five-card, Celtic Cross, and configurable open-draw spreads.
 - Shuffle-and-draw or manual card selection, without replacement within a reading.
 - Interactive card details, reversed orientations, keyboard-dismissable modal, and responsive layouts.
